@@ -1,0 +1,6 @@
+{'Data':[
+ {\\\"$class\\\":\\\"org.example\\\",\\\"tradingSymbol\\\":\\\"G1\\\",\\\"description\\\":\\\"Gold Cat 1\\\",\\\"mainExchange\\\":\\\"ABC\\\",\\\"quantity\\\":10,\\\"owner\\\":\\\"Trader#001\\\"},
+ {\\\"$class\\\":\\\"org.example\\\",\\\"tradingSymbol\\\":\\\"G2\\\",\\\"description\\\":\\\"Gold Cat 2\\\",\\\"mainExchange\\\":\\\"ABC\\\",\\\"quantity\\\":1,\\\"owner\\\":\\\"Trader#002\\\"},
+ {\\\"$class\\\":\\\"org.example\\\",\\\"tradingSymbol\\\":\\\"S1\\\",\\\"description\\\":\\\"silver Cat 1\\\",\\\"mainExchange\\\":\\\"ABC\\\",\\\"quantity\\\":1,\\\"owner\\\":\\\"Trader#001\\\"}
+]
+}

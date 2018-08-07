@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><application-layout>
+    <component name="JSONFileName">
+        <param name="gui:x" value="-333"/>
+        <param name="gui:y" value="6"/>
+    </component>
+    <component name="ParseJSON">
+        <param name="gui:x" value="-17"/>
+        <param name="gui:y" value="55"/>
+        <param name="gui:bends:1" value="-52,46;-47,85"/>
+    </component>
+    <component name="ReadJSONData">
+        <param name="gui:x" value="-236"/>
+        <param name="gui:y" value="6"/>
+    </component>
+    <component name="Split">
+        <param name="gui:x" value="-122"/>
+        <param name="gui:y" value="6"/>
+    </component>
+    <component name="JSON">
+        <param name="gui:x" value="-17"/>
+        <param name="gui:y" value="-56"/>
+        <param name="gui:bends:1" value="-44,26;-32,-26"/>
+    </component>
+    <component name="Tuple">
+        <param name="gui:x" value="116"/>
+        <param name="gui:y" value="55"/>
+    </component>
+</application-layout>

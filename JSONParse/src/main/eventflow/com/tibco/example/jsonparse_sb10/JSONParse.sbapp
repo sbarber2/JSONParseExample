@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<modify version="10.2.1_177c19781b045143ae9bff24723363ab2dbd1891">
+    <add>
+        <annotations>
+            <annotation name="hygienic"/>
+        </annotations>
+        <named-schemas>
+            <schema name="TradingThing">
+                <field name="$class" type="string"/>
+                <field name="tradingSymbol" type="string"/>
+                <field name="description" type="string"/>
+                <field name="mainExchange" type="string"/>
+                <field name="quantity" type="int"/>
+                <field name="owner" type="string"/>
+            </schema>
+            <schema name="DataSchema">
+                <field name="Data" type="list">
+                    <element-type type="tuple" value="TradingThing"/>
+                </field>
+            </schema>
+        </named-schemas>
+        <dynamic-variables/>
+        <stream name="JSONFileName">
+            <schema>
+                <field name="FileName" type="string"/>
+            </schema>
+        </stream>
+        <box name="ReadJSONData" type="inputadapter">
+            <input port="1" stream="JSONFileName"/>
+            <output port="1" stream="out:ReadJSONData_1"/>
+            <param name="start:state" value="true"/>
+            <param name="javaclass" value="com.streambase.sb.adapter.filereader.FileReader"/>
+            <param name="Charset" value=""/>
+            <param name="UseDefaultCharset" value="true"/>
+            <param name="blobData" value="false"/>
+            <param name="defaultFileName" value="data2.json"/>
+            <param name="enableControlPort" value="true"/>
+            <param name="enableStatusPort" value="false"/>
+            <param name="extractCompressedBlobData" value="true"/>
+            <param name="fileContentsFieldName" value="FileContents"/>
+            <param name="filenameField" value=""/>
+            <param name="lineSeparator" value=""/>
+            <param name="logLevel" value="INFO"/>
+            <param name="oneTuplePerLine" value="false"/>
+            <param name="passThroughFields" value="false"/>
+            <param name="preserveNewLines" value="false"/>
+            <param name="readAsResource" value="true"/>
+            <param name="readDefaultFileAtStartup" value="false"/>
+            <param name="readFilesSynchronously" value="false"/>
+            <param name="replacementDataFieldName" value=""/>
+        </box>
+        <box name="Split" type="split">
+            <input port="1" stream="out:ReadJSONData_1"/>
+            <output port="1" stream="JSON"/>
+            <output port="2" stream="out:Split_2"/>
+            <param name="output-count" value="2"/>
+        </box>
+        <output-stream name="JSON"/>
+        <box name="ParseJSON" type="java">
+            <input port="1" stream="out:Split_2"/>
+            <output port="1" stream="Tuple"/>
+            <param name="start:state" value="true"/>
+            <param name="javaclass" value="com.streambase.sb.operator.jsontuple.JSON2Tuple"/>
+            <param name="enableLooseParsing" value="false"/>
+            <param name="enablePassThroughFields" value="true"/>
+            <param name="enableStatusPort" value="false"/>
+            <param name="jsonFieldName" value="FileContents"/>
+            <param name="logLevel" value="INFO"/>
+            <param name="outputSchema" value="DataSchema"/>
+            <param name="passThroughFieldsFieldName" value="PassThroughFields"/>
+            <param name="timestampFormat" value="yyyy-MM-dd HH:mm:ss.SSSZ"/>
+        </box>
+        <output-stream name="Tuple"/>
+    </add>
+</modify>
