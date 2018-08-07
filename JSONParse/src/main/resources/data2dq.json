@@ -1,0 +1,3 @@
+{"Data":[{"$class":"org.example.mynetwork.Commodity","tradingSymbol":"G001","description":"Gold Cat 1","mainExchange":"LSX","quantity":10,"owner":"resource:org.example.mynetwork.Trader#001"},{"$class":"org.example.mynetwork.Commodity","tradingSymbol":"BLS","description":"Blinkers","mainExchange":"NYSE","quantity":5,"owner":"resource:org.example.mynetwork.Trader#002"}]}
+
+

@@ -33,7 +33,7 @@
             <param name="Charset" value=""/>
             <param name="UseDefaultCharset" value="true"/>
             <param name="blobData" value="false"/>
-            <param name="defaultFileName" value="data2.json"/>
+            <param name="defaultFileName" value="data2dq.json"/>
             <param name="enableControlPort" value="true"/>
             <param name="enableStatusPort" value="false"/>
             <param name="extractCompressedBlobData" value="true"/>
